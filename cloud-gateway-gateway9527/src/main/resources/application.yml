@@ -6,9 +6,13 @@ spring:
     name: cloud-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: payment_route
-          uri: http://localhost:8001
+#          uri: http://localhost:8001
+          uri: lb://cloud-payment-service
           predicates:
             - Path=/payment/**
 
