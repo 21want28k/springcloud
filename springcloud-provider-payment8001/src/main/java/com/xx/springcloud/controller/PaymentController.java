@@ -42,7 +42,7 @@ public class PaymentController {
     }
 
     @GetMapping("/payment/getById/{id}")
-    public CommonResult<Payment> getById(@PathVariable Long id) {
+    public CommonResult<Payment> getById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getById(id);
         if (payment != null) {
             return new CommonResult<>(200, "查找成功" + port, payment);
