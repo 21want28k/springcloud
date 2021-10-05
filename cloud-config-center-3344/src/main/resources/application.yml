@@ -1,0 +1,31 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/NoobIn/springcloud-config.git
+          search-paths:
+            - springcloud-config
+          username: 937930940@qq.com
+          password: lyy1314520
+      label: master # 分支
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh' # 总线全部刷新命令：post请求 http://localhost:3344/actuator/bus-refresh
+        # 总线单个刷新命令：post请求 http://localhost:3344/actuator/bus-refresh/config-client:3366(spring.application.name:端口号)

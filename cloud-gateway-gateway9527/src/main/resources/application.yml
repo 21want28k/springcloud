@@ -11,11 +11,14 @@ spring:
           enabled: true
       routes:
         - id: payment_route
-#          uri: http://localhost:8001
+          #          uri: http://localhost:8001
           uri: lb://cloud-payment-service
           predicates:
             - Path=/payment/**
-
+#            - After=2021-09-27T19:12:19.012+08:00[Asia/Shanghai] # 由ZonedDateTime time = ZonedDateTime.now();toString就可以得到
+#            - Before=2021-09-27T19:16:49.207+08:00[Asia/Shanghai] # 配置时间的
+#            - Between=2021-09-27T19:12:19.012+08:00[Asia/Shanghai],2021-09-27T19:25:49.207+08:00[Asia/Shanghai]
+            - Cookie=username,xx
 eureka:
   client:
     register-with-eureka: true
