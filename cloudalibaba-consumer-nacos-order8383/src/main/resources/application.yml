@@ -1,0 +1,21 @@
+server:
+  port: 8383
+
+spring:
+  application:
+    # 注册进微服务的名称
+    name: cloud-nacos-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+#消费者将要去访问的微服务名称
+server-url:
+  nacos-user-service: http://nacos-payment-provider
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
