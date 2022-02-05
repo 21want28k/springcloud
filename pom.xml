@@ -27,6 +27,7 @@
         <module>cloudalibaba-provider-payment9001</module>
         <module>cloudalibaba-provider-payment9002</module>
         <module>cloudalibaba-consumer-nacos-order8383</module>
+        <module>cloudalibaba-config-nacos-client-3377</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -109,6 +110,41 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <!--统一配置测试开发生产环境-->
+    <profiles>
+        <profile>
+            <!--开发环境-->
+            <id>dev</id>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+                <nacosNamespace>aa0828b7-9470-4b30-a387-5f795528e1af</nacosNamespace>
+                <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
+            </properties>
+        </profile>
+        <profile>
+            <!--测试环境-->
+            <id>test</id>
+            <!-- 加了这个，默认选中 -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <!-- 以下属性用于 bootstrap.yml 文件中 可通过 @activatedProperties@ 获取配置的变量-->
+            <properties>
+                <activatedProperties>test</activatedProperties>
+                <nacosNamespace>c16b5823-ed59-48a6-b4af-fa79a17d57e8</nacosNamespace>
+                <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
+            </properties>
+        </profile>
+        <!--生产环境-->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+                <nacosNamespace>099fa140-a9d1-42af-861b-85ae54471703</nacosNamespace>
+                <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
