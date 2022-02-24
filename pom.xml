@@ -28,6 +28,7 @@
         <module>cloudalibaba-provider-payment9002</module>
         <module>cloudalibaba-consumer-nacos-order8383</module>
         <module>cloudalibaba-config-nacos-client-3377</module>
+        <module>cloudalibaba-sentinel-service8401</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -144,9 +145,25 @@
                 <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
             </properties>
         </profile>
+
+        <profile>
+            <!--mac环境-->
+            <id>mac</id>
+            <!-- 以下属性用于 bootstrap.yml 文件中 可通过 @activatedProperties@ 获取配置的变量-->
+            <properties>
+                <baseIp>172.20.10.2</baseIp>
+                <sentinelIp>58080</sentinelIp>
+            </properties>
+        </profile>
     </profiles>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
