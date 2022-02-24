@@ -117,6 +117,9 @@
             <!--开发环境-->
             <id>dev</id>
             <properties>
+                <baseIp>10.195.27.180</baseIp>
+                <sentinelPort>58080</sentinelPort>
+                <nginxIP>10.195.27.180</nginxIP>
                 <activatedProperties>dev</activatedProperties>
                 <nacosNamespace>aa0828b7-9470-4b30-a387-5f795528e1af</nacosNamespace>
                 <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
