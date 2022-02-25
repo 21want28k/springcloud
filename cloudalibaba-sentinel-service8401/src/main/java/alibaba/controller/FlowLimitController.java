@@ -21,11 +21,11 @@ public class FlowLimitController {
     @GetMapping("/testA")
     public String testA() {
         // 测试阈值类型：线程数
-        /*try {
-            TimeUnit.MILLISECONDS.sleep(800);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
+//        try {
+//            TimeUnit.MILLISECONDS.sleep(80);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "------testA";
     }
 

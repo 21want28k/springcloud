@@ -154,8 +154,12 @@
             <id>mac</id>
             <!-- 以下属性用于 bootstrap.yml 文件中 可通过 @activatedProperties@ 获取配置的变量-->
             <properties>
-                <baseIp>172.20.10.2</baseIp>
-                <sentinelIp>58080</sentinelIp>
+                <baseIp>127.0.0.1</baseIp>
+                <sentinelPort>58080</sentinelPort>
+                <nginxIP>10.195.27.180</nginxIP>
+                <activatedProperties>dev</activatedProperties>
+                <nacosNamespace>aa0828b7-9470-4b30-a387-5f795528e1af</nacosNamespace>
+                <nacosGroup>nacos-group-${activatedProperties}</nacosGroup>
             </properties>
         </profile>
     </profiles>
