@@ -155,7 +155,7 @@
             <id>mac</id>
             <!-- 以下属性用于 bootstrap.yml 文件中 可通过 @activatedProperties@ 获取配置的变量-->
             <properties>
-                <baseIp>172.20.10.2</baseIp>
+                <baseIp>127.0.0.1</baseIp>
                 <sentinelPort>58080</sentinelPort>
                 <nginxIP>10.195.27.180</nginxIP>
                 <docker0>docker.for.mac.host.internal</docker0>

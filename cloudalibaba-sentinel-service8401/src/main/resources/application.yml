@@ -7,7 +7,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: @baseIp@:80 #Nacos服务注册中心地址
+        server-addr: @nginxIP@:80 #Nacos服务注册中心地址
     sentinel:
       transport:
         dashboard: @baseIp@:@sentinelPort@ #配置Sentinel dashboard地址
