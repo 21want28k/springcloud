@@ -10,9 +10,9 @@ spring:
         server-addr: @baseIp@:80 #Nacos服务注册中心地址
     sentinel:
       transport:
-        dashboard: @baseIp@:@sentinelIp@ #配置Sentinel dashboard地址
+        dashboard: @baseIp@:@sentinelPort@ #配置Sentinel dashboard地址
         port: 8719
-        clientIp: docker.for.mac.host.internal
+        clientIp: @docker0@
 #      datasource:
 #        ds1:
 #          nacos:
