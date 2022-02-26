@@ -157,7 +157,7 @@
             <properties>
                 <baseIp>127.0.0.1</baseIp>
                 <sentinelPort>58080</sentinelPort>
-                <nginxIP>10.195.27.180</nginxIP>
+                <ubuntuServerIP>10.195.27.180</ubuntuServerIP>
                 <docker0>docker.for.mac.host.internal</docker0>
             </properties>
         </profile>
