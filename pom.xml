@@ -29,6 +29,9 @@
         <module>cloudalibaba-consumer-nacos-order8383</module>
         <module>cloudalibaba-config-nacos-client-3377</module>
         <module>cloudalibaba-sentinel-service8401</module>
+        <module>cloudalibaba-provider-payment9003</module>
+        <module>cloudalibaba-provider-payment9004</module>
+        <module>cloudalibaba-consumer-nacos-order84</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -155,6 +158,7 @@
             <id>mac</id>
             <!-- 以下属性用于 bootstrap.yml 文件中 可通过 @activatedProperties@ 获取配置的变量-->
             <properties>
+                <nginxIP>10.195.27.180</nginxIP>
                 <baseIp>127.0.0.1</baseIp>
                 <sentinelPort>58080</sentinelPort>
                 <ubuntuServerIP>10.195.27.180</ubuntuServerIP>
